@@ -1148,7 +1148,7 @@ int main(int argc, char *argv[])
 	switch_snprintf(pid_buffer, sizeof(pid_buffer), "%d", pid);
 	pid_len = strlen(pid_buffer);
 
-	apr_pool_create(&pool, NULL);
+	apr_pool_create(&pool, NULL); /*李卫国：使用apr库，需要了解下*/
 
 	switch_dir_make_recursive(SWITCH_GLOBAL_dirs.run_dir, SWITCH_DEFAULT_DIR_PERMS, pool);
 
