@@ -1,0 +1,563 @@
+digraph freeswitch_sofia_dispatch_event_t 
+{ 
+	rankdir = BT 
+	node[ 
+		shape = "record" 
+		color="blue" 
+	] 
+  
+  	/*struct in mod_sofia*/
+	sofia_dispatch_event_t[ 
+		label =     "{<f0>sofia_dispatch_event_t| 
+			<f1>nua_saved_event_t event[1];| 
+			<f2>nua_handle_t *nh;| 
+			<f3>nua_event_data_t const *data;| 
+			<f4>su_time_t when;| 
+			<f5>sip_t *sip;| 
+			<f6>nua_t *nua;| 
+			<f7>sofia_profile_t *profile;| 
+			<f8>int save;| 
+			<f9>switch_core_session_t *session;| 
+			<f10>switch_core_session_t *init_session;| 
+			<f11>switch_memory_pool_t *pool;| 
+			<f12>struct sofia_dispatch_event_s *next;}" 
+	]
+	
+	/*struct in sofia-sip*/ 
+	su_msg_s[ 
+		label = 	"{<f0_0>/**@internal Message**/\n  su_msg_s|  
+			<f0_1>size_t         sum_size;|
+			<f0_2>su_msg_t      *sum_next;|
+			<f0_3>su_task_r      sum_to;|
+			<f0_4>su_task_r      sum_from;|
+			<f0_5>su_msg_f       sum_func;|
+			<f0_6>su_msg_f       sum_report;|
+			<f0_7>su_msg_deinit_function *sum_deinit;|
+			<f0_8>su_msg_arg_t   sum_data[1];\n/* minimum size, may be extended */}"
+	]
+	
+	/*struct in sofia-sip*/ 
+	nua_handle_s[
+		label = "{nua_handle_s|
+			su_home_t nh_home[1];/**\Memory home*/|
+			nua_handle_t   *nh_next;|
+			nua_handle_t  **nh_prev;|
+			nua_t        	 *nh_nua;\n	/**Pointer to NUA object  */|
+			void           *nh_valid;\n	/**Cookie */|
+			#define nua_valid_handle_cookie ((void *)(intptr_t)nua_handle)|
+			nua_hmagic_t 	 *nh_magic;\n	/**Application context */|
+			tagi_t         *nh_tags;\n	/**Initial tags */|
+			tagi_t         *nh_ptags;\n	/**Initial parameters */|
+			nua_handle_t   *nh_identity;\n	/**Identity */|
+			nua_handle_preferences_t *nh_prefs;\n /**Preferences */|
+			#define nh_dprefs nh_nua-\>nua_dhandle-\>nh_prefs|
+			/* Handle type is determined by special event and flags. */\n
+			nua_event_t     nh_special;\n	/**Special event */|
+			unsigned        nh_has_invite:1; \n    /**Has call */|
+			unsigned        nh_has_subscribe:1;\n  /**Has watcher */|
+			unsigned        nh_has_notify:1; \n    /**Has notifier */|
+			unsigned        nh_has_register:1;\n   /**Has registration */|
+			/* Call status */\n
+			unsigned        nh_active_call:1;|
+			unsigned        nh_hold_remote:1;|
+			unsigned        nh_ref_by_stack:1;\n	/**Has stack used the handle? */|
+			unsigned        nh_ref_by_user:1;\n	/**Has user used the handle? */|
+			unsigned        nh_init:1;\n	        /**Handle has been initialized */|
+			unsigned        nh_used_ptags:1;\n	/**Ptags has been used */|
+			unsigned        nh_destroyed:1;\n	/**nh_destroy already called */|			
+			unsigned :0;|
+			nua_dialog_state_t nh_ds[1];|
+			auth_client_t  *nh_auth;\n	/**Authorization objects */|
+			soa_session_t  *nh_soa;\n	/**Media session */ |
+			struct nua_referral \{\n
+				nua_handle_t  *ref_handle;\n	/**Referring handle */\n
+    				sip_event_t   *ref_event;\n	/**Event used with NOTIFY */\n
+  			\} nh_referral[1];|
+  			nea_server_t   *nh_notifier;\n	/**SIP notifier */
+			}"
+	]
+
+	/*struct in sofia-sip*/
+	event_s[
+		label = "{event_s|
+			nua_handle_t *e_nh;|
+  			int           e_event;|
+  			short         e_always;|
+  			short         e_status;|
+  			char const   *e_phrase;|
+  			msg_t        *e_msg;|
+  			tagi_t        e_tags[1];
+		}"
+	]
+
+	/*struct in sofia-sip*/
+	su_time_s [
+  		label = "{su_time_s|
+			unsigned long tv_sec;\n		/**Seconds */|
+  			unsigned long tv_usec;\n	/**Microseconds  */
+			}"
+	]
+	/*struct in sofia-sip*/
+	sip_s[
+		label = "{sip_s|
+  			msg_common_t               sip_common[1];\n     /** For recursive inclusion */|
+			msg_pub_t *sip_next; \n /** Dummy link to msgfrag */| 
+			void *sip_user; \n /** Application data */|
+			unsigned sip_size; \n /** Size of structure */|
+			int sip_flags; \n /** Parser flags */|
+			sip_error_t *sip_error; \n /** Erroneous headers */| 
+			/* Pseudoheaders */|
+			sip_request_t *sip_request; \n /** Request line */|
+			sip_status_t *sip_status; \n /** Status line */|
+			/* === Headers start here */|
+			sip_via_t *sip_via; \n /** Via (v) */|
+			sip_route_t *sip_route; \n /** Route */|
+			sip_record_route_t *sip_record_route;\n /** Record-Route */|
+			sip_max_forwards_t *sip_max_forwards;\n /** Max-Forwards */|
+			sip_proxy_require_t *sip_proxy_require;\n /** Proxy-Require */|
+			sip_from_t *sip_from;\n /** From (f) */|
+			sip_to_t *sip_to; \n /** To (t) */|
+			sip_call_id_t *sip_call_id; \n /* Call-ID (i) */|
+			sip_cseq_t *sip_cseq; \n /** CSeq */|
+			sip_contact_t *sip_contact; \n /** Contact (m) */|
+			sip_rseq_t *sip_rseq; \n /** RSeq */|
+			sip_rack_t *sip_rack; \n /** RAck */|
+			/* Caller Preferences */|
+			sip_request_disposition_t *sip_request_disposition; \n /** Request-Disposition (d) */|
+			sip_accept_contact_t *sip_accept_contact;\n/** Accept-Contact (a) */|
+			sip_reject_contact_t *sip_reject_contact;\n/** Reject-Contact (j) */|
+			sip_expires_t *sip_expires;\n /** Expires */|
+			sip_date_t *sip_date; \n /** Date */|
+			sip_retry_after_t *sip_retry_after;\n /** Retry-After */|
+			sip_timestamp_t *sip_timestamp;\n /** Timestamp */|
+			sip_min_expires_t *sip_min_expires;\n /** Min-Expires */|
+			sip_subject_t *sip_subject; \n/** Subject (s) */|
+			sip_priority_t *sip_priority;\n /** Priority */|
+			sip_call_info_t *sip_call_info;\n /** Call-Info */|
+			sip_organization_t *sip_organization;\n /** Organization */|
+			sip_server_t *sip_server;\n /** Server */|
+			sip_user_agent_t *sip_user_agent;\n /** User-Agent */|
+			sip_in_reply_to_t *sip_in_reply_to; \n /** In-Reply-To */|
+			sip_accept_t *sip_accept;\n /** Accept */|
+			sip_accept_encoding_t *sip_accept_encoding; \n/** Accept-Encoding */|
+			sip_accept_language_t *sip_accept_language; \n/** Accept-Language */|
+			sip_allow_t *sip_allow;\n /** Allow */|
+			sip_require_t *sip_require;\n /** Require */|
+			sip_supported_t *sip_supported;\n /** Supported (k) */|
+			sip_unsupported_t *sip_unsupported;\n /** Unsupported */|
+			/* RFC 3265 */|
+			sip_event_t *sip_event; \n /** Event (o) */|
+			sip_allow_events_t *sip_allow_events; \n /** Allow-Events (u) */|
+			sip_subscription_state_t *sip_subscription_state;\n /** Subscription-State */|
+			sip_proxy_authenticate_t *sip_proxy_authenticate;\n /** Proxy-Authenticate */|
+			sip_proxy_authentication_info_t *sip_proxy_authentication_info;\n /** Proxy-Authentication-Info */|
+			sip_proxy_authorization_t *sip_proxy_authorization;\n /** Proxy-Authorization */|
+			sip_authorization_t *sip_authorization;\n /** Authorization */|
+			sip_www_authenticate_t *sip_www_authenticate;\n /** WWW-Authenticate */|
+			sip_authentication_info_t *sip_authentication_info;|
+			/** Authentication-Info */|
+			sip_error_info_t *sip_error_info; \n/** Error-Info */|
+			sip_warning_t *sip_warning;\n /** Warning */|
+			/* RFC 3515 */|
+			sip_refer_to_t *sip_refer_to; \n /** Refer-To (r) */|
+			sip_referred_by_t *sip_referred_by;\n /** Referred-By (b) */|
+			sip_replaces_t *sip_replaces; \n /** Replaces */|
+			/* draft-ietf-sip-session-timer */|
+			sip_session_expires_t *sip_session_expires;\n /** Session-Expires (x) */|
+			sip_min_se_t *sip_min_se; \n /** Min-SE */|
+			sip_path_t *sip_path; \n /** Path */|
+			sip_service_route_t *sip_service_route;\n /** Service-Route */|
+			sip_reason_t *sip_reason; \n /** Reason */|
+			sip_security_client_t *sip_security_client;\n /** Security-Client */|
+			sip_security_server_t *sip_security_server;\n /** Security-Server */|
+			sip_security_verify_t *sip_security_verify;\n/** Security-Verify */|
+			sip_privacy_t *sip_privacy; \n/** Privacy */|
+			sip_etag_t *sip_etag; \n /** SIP-ETag */|
+			sip_if_match_t *sip_if_match; \n /** SIP-If-Match */|
+			/* Entity headers */|
+			sip_mime_version_t *sip_mime_version; \n/** MIME-Version */|
+			sip_content_type_t *sip_content_type; \n/** Content-Type (c) */|
+			sip_content_encoding_t *sip_content_encoding; \n/** Content-Encoding (e) */|
+			sip_content_language_t *sip_content_language; \n/** Content-Language */|
+			sip_content_disposition_t *sip_content_disposition;\n /** Content-Disposition */|
+			sip_content_length_t *sip_content_length;\n /** Content-Length (l) */|
+			/* === Headers end here */|
+			sip_unknown_t *sip_unknown;\n /** Unknown headers */|
+			sip_separator_t *sip_separator;\n /** Separator between headers and payload */|
+			sip_payload_t *sip_payload;\n /** Message payload */|
+			msg_multipart_t *sip_multipart;\n /** Multipart MIME payload */
+		}"
+	]
+	
+	/*struct in sofia-sip*/
+	nua_s[
+		label = "{nua_s|
+			su_home_t            nua_home[1];|
+			/* API (client) side */|
+			su_root_t    	      *nua_api_root;|
+			su_clone_r   	       nua_clone;|
+			su_task_r            nua_client;|
+			nua_callback_f       nua_callback;|
+			nua_magic_t         *nua_magic;|
+			nua_event_frame_t   *nua_current;|
+			nua_saved_event_t    nua_signal[1];|
+			/**Used by stop-and-wait args calls */|
+			tagi_t const        *nua_args;|
+			/* Engine state flags */|
+			sip_time_t           nua_shutdown;|
+			unsigned             nua_shutdown_started:1;\n /** Shutdown initiated */|
+			unsigned             nua_shutdown_final:1;\n /** Shutdown is complete */|
+			unsigned             nua_from_is_set;|
+			unsigned :0;|
+			/** Local SIP address. Contents are kept around for ever. */|
+			sip_from_t           nua_from[1];|
+			/* ---------------------------------------------------------------------- */|
+			/* Protocol (server) side */|
+			su_network_changed_t *nua_nw_changed;|
+			nua_registration_t *nua_registrations;\n /** Active registrations */|
+			/* Constants */|
+			sip_accept_t       *nua_invite_accept; \n/* What we accept for invite */|
+			su_root_t          *nua_root;|
+			su_task_r           nua_server;|
+			nta_agent_t        *nua_nta;|
+			su_timer_t         *nua_timer;|
+			/* User-agent parameters */|
+			nua_global_preferences_t nua_prefs[1];|
+			nua_handle_t        *nua_handles;|
+			nua_handle_t       **nua_handles_tail;|
+		}"
+	]
+	
+	/*struct in mod_sofia*/
+	sofia_profile[
+		label = "{sofia_profile|
+			int debug;|
+			int parse_invite_tel_params;|
+			char *name;|
+			char *domain_name;|
+			char *dbname;|
+			char *dialplan;|
+			char *context;|
+			char *shutdown_type;|
+			char *extrtpip;|
+			char *rtpip[MAX_RTPIP];|
+			char *rtpip6[MAX_RTPIP];|
+			char *jb_msec;|
+			switch_payload_t te;|
+			switch_payload_t recv_te;|
+			uint32_t rtpip_index;|
+			uint32_t rtpip_next;|
+			uint32_t rtpip_index6;|
+			uint32_t rtpip_next6;|
+			char *rtcp_audio_interval_msec;|
+			char *rtcp_video_interval_msec;|
+			char *sdp_username;|
+			char *sipip;|
+			char *extsipip;|
+			char *url;|
+			char *public_url;|
+			char *bindurl;|
+			char *ws_bindurl;|
+			char *wss_bindurl;|
+			char *tls_url;|
+			char *tls_public_url;|
+			char *tls_bindurl;|
+			char *tcp_public_contact;|
+			char *tls_public_contact;|
+			char *tcp_contact;|
+			char *tls_contact;|
+			char *sla_contact;|
+			char *sipdomain;|
+			char *timer_name;|
+			char *hold_music;|
+			char *outbound_proxy;|
+			char *bind_params;|
+			char *tls_bind_params;|
+			char *tls_cert_dir;|
+			char *reg_domain;|
+			char *sub_domain;|
+			char *reg_db_domain;|
+			char *user_agent;|
+			char *record_template;|
+			char *record_path;|
+			char *presence_hosts;|
+			char *presence_privacy;|
+			char *challenge_realm;|
+			char *pnp_prov_url;|
+			char *pnp_notify_profile;|
+			int sip_user_ping_max;|
+			int sip_user_ping_min;|
+			sofia_cid_type_t cid_type;|
+			switch_core_media_dtmf_t dtmf_type;|
+			int auto_restart;|
+			switch_port_t sip_port;|
+			switch_port_t extsipport;|
+			switch_port_t tls_sip_port;|
+			char *tls_ciphers;|
+			int tls_version;|
+			unsigned int tls_timeout;|
+			char *inbound_codec_string;|
+			char *outbound_codec_string;|
+			int running;|
+			int dtmf_duration;|
+			uint8_t flags[TFLAG_MAX];|
+			uint8_t pflags[PFLAG_MAX];|
+			switch_core_media_flag_t media_flags[SCMF_MAX];|
+			unsigned int mflags;|
+			unsigned int ndlb;|
+			unsigned int mndlb;|
+			uint32_t max_calls;|
+			uint32_t nonce_ttl;|
+			uint32_t max_auth_validity;|
+			nua_t *nua;|
+			switch_memory_pool_t *pool;|
+			su_root_t *s_root;|
+			sip_alias_node_t *aliases;|
+			switch_payload_t cng_pt;|
+			uint32_t codec_flags;|
+			switch_mutex_t *ireg_mutex;|
+			switch_mutex_t *dbh_mutex;|
+			switch_mutex_t *gateway_mutex;|
+			sofia_gateway_t *gateways;|
+			//su_home_t *home;|
+			switch_hash_t *chat_hash;|
+			switch_hash_t *reg_nh_hash;|
+			switch_hash_t *mwi_debounce_hash;|
+			//switch_core_db_t *master_db;|
+			switch_thread_rwlock_t *rwlock;|
+			switch_mutex_t *flag_mutex;|
+			uint32_t inuse;|
+			time_t started;|
+			uint32_t session_timeout;|
+			uint32_t minimum_session_expires;|
+			uint32_t max_proceeding;|
+			uint32_t rtp_timeout_sec;|
+			uint32_t rtp_hold_timeout_sec;|
+			char *odbc_dsn;|
+			char *pre_trans_execute;|
+			char *post_trans_execute;|
+			char *inner_pre_trans_execute;|
+			char *inner_post_trans_execute;|
+			switch_sql_queue_manager_t *qm;|
+			char *acl[SOFIA_MAX_ACL];|
+			char *acl_pass_context[SOFIA_MAX_ACL];|
+			char *acl_fail_context[SOFIA_MAX_ACL];|
+			uint32_t acl_count;|
+			char *proxy_acl[SOFIA_MAX_ACL];|
+			uint32_t proxy_acl_count;|
+			char *reg_acl[SOFIA_MAX_ACL];|
+			uint32_t reg_acl_count;|
+			char *nat_acl[SOFIA_MAX_ACL];|
+			uint32_t nat_acl_count;|
+			char *cand_acl[SWITCH_MAX_CAND_ACL];|
+			uint32_t cand_acl_count;|
+			int server_rport_level;|
+			int client_rport_level;|
+			sofia_presence_type_t pres_type;|
+			sofia_presence_held_calls_type_t pres_held_type;|
+			sofia_media_options_t media_options;|
+			uint32_t force_subscription_expires;|
+			uint32_t force_publish_expires;|
+			char *user_agent_filter;|
+			uint32_t max_registrations_perext;|
+			switch_rtp_bug_flag_t auto_rtp_bugs;|
+			switch_rtp_bug_flag_t manual_rtp_bugs;|
+			switch_rtp_bug_flag_t manual_video_rtp_bugs;|
+			uint32_t ib_calls;|
+			uint32_t ob_calls;|
+			uint32_t ib_failed_calls;|
+			uint32_t ob_failed_calls;|
+			uint32_t timer_t1;|
+			uint32_t timer_t1x64;|
+			uint32_t timer_t2;|
+			uint32_t timer_t4;|
+			char *contact_user;|
+			char *local_network;|
+			uint32_t trans_timeout;|
+			switch_time_t last_sip_event;|
+			switch_time_t last_root_step;|
+			uint32_t step_timeout;|
+			uint32_t event_timeout;|
+			int watchdog_enabled;|
+			switch_mutex_t *gw_mutex;|
+			uint32_t queued_events;|
+			uint32_t last_cseq;|
+			int tls_only;|
+			int tls_verify_date;|
+			enum tport_tls_verify_policy tls_verify_policy;|
+			int tls_verify_depth;|
+			char *tls_passphrase;|
+			char *tls_verify_in_subjects_str;|
+			su_strlst_t *tls_verify_in_subjects;|
+			uint32_t sip_force_expires;|
+			uint32_t sip_force_expires_min;|
+			uint32_t sip_force_expires_max;|
+			uint32_t sip_expires_max_deviation;|
+			uint32_t sip_expires_late_margin;|
+			uint32_t sip_subscription_max_deviation;|
+			int ireg_seconds;|
+			int iping_seconds;|
+			int iping_freq;|
+			sofia_paid_type_t paid_type;|
+			uint32_t rtp_digit_delay;|
+			switch_queue_t *event_queue;|
+			switch_thread_t *thread;|
+			switch_core_media_vflag_t vflags;|
+			char *ws_ip;|
+			switch_port_t ws_port;|
+			char *wss_ip;|
+			switch_port_t wss_port;|
+			int socket_tcp_keepalive;|
+			int tcp_keepalive;|
+			int tcp_pingpong;|
+			int tcp_ping2pong;|
+			ka_type_t keepalive;|
+			int bind_attempts;|
+			int bind_attempt_interval;|
+			char *proxy_notify_events;|
+			char *proxy_info_content_types;
+			}"
+	]
+	
+	/*struct in switch_core*/
+	switch_core_session[
+		label = "{switch_core_session|
+			switch_memory_pool_t *pool;|
+			switch_thread_t *thread;|
+			switch_thread_id_t thread_id;|
+			switch_endpoint_interface_t *endpoint_interface;|
+			switch_size_t id;|
+			switch_session_flag_t flags;|
+			switch_channel_t *channel;|
+			switch_io_event_hooks_t event_hooks;|
+			switch_codec_t *read_codec;|
+			switch_codec_t *real_read_codec;|
+			switch_codec_t *write_codec;|
+			switch_codec_t *real_write_codec;|
+			switch_codec_t *video_read_codec;|
+			switch_codec_t *video_write_codec;|
+			switch_codec_implementation_t read_impl;|
+			switch_codec_implementation_t real_read_impl;|
+			switch_codec_implementation_t write_impl;|
+			switch_codec_implementation_t video_read_impl;|
+			switch_codec_implementation_t video_write_impl;|
+			switch_audio_resampler_t *read_resampler;|
+			switch_audio_resampler_t *write_resampler;|
+			switch_mutex_t *mutex;|
+			switch_mutex_t *resample_mutex;|
+			switch_mutex_t *codec_read_mutex;|
+			switch_mutex_t *codec_write_mutex;|
+			switch_mutex_t *video_codec_read_mutex;|
+			switch_mutex_t *video_codec_write_mutex;|
+			switch_thread_cond_t *cond;|
+			switch_mutex_t *frame_read_mutex;|
+			switch_thread_rwlock_t *rwlock;|
+			switch_thread_rwlock_t *io_rwlock;|
+			void *streams[SWITCH_MAX_STREAMS];|
+			int stream_count;|
+			char uuid_str[SWITCH_UUID_FORMATTED_LENGTH + 1];|
+			void *private_info[SWITCH_CORE_SESSION_MAX_PRIVATES];|
+			switch_queue_t *event_queue;|
+			switch_queue_t *message_queue;|
+			switch_queue_t *signal_data_queue;|
+			switch_queue_t *private_event_queue;|
+			switch_queue_t *private_event_queue_pri;|
+			switch_thread_rwlock_t *bug_rwlock;|
+			switch_media_bug_t *bugs;|
+			switch_app_log_t *app_log;|
+			uint32_t stack_count;|
+			switch_buffer_t *raw_write_buffer;|
+			switch_frame_t raw_write_frame;|
+			switch_frame_t enc_write_frame;|
+			uint8_t raw_write_buf[SWITCH_RECOMMENDED_BUFFER_SIZE];|
+			uint8_t enc_write_buf[SWITCH_RECOMMENDED_BUFFER_SIZE];|
+			switch_buffer_t *raw_read_buffer;|
+			switch_frame_t raw_read_frame;|
+			switch_frame_t enc_read_frame;|
+			uint8_t raw_read_buf[SWITCH_RECOMMENDED_BUFFER_SIZE];|
+			uint8_t enc_read_buf[SWITCH_RECOMMENDED_BUFFER_SIZE];|
+			/* video frame.data being trated differently than audio, allocate a dynamic data buffer if necessary*/|
+			switch_buffer_t *video_raw_write_buffer;|
+			switch_frame_t video_raw_write_frame;|
+			// switch_frame_t video_enc_write_frame;|
+			switch_buffer_t *video_raw_read_buffer;|
+			switch_frame_t video_raw_read_frame;|
+			// switch_frame_t video_enc_read_frame;|
+			switch_codec_t bug_codec;|
+			uint32_t read_frame_count;|
+			uint32_t track_duration;|
+			uint32_t track_id;|
+			switch_log_level_t loglevel;|
+			uint32_t soft_lock;|
+			switch_ivr_dmachine_t *dmachine[2];|
+			plc_state_t *plc;|
+			switch_media_handle_t *media_handle;|
+			uint32_t decoder_errors;|
+			switch_core_video_thread_callback_func_t video_read_callback;|
+			void *video_read_user_data;|
+			switch_core_video_thread_callback_func_t text_read_callback;|
+			void *text_read_user_data;|
+			switch_io_routines_t *io_override;|
+			switch_slin_data_t *sdata;|
+			switch_buffer_t *text_buffer;|
+			switch_buffer_t *text_line_buffer;|
+			switch_mutex_t *text_mutex;
+			}"
+	]
+
+	apr_pool_t[
+		label = "{apr_pool_t|
+			apr_pool_t           *parent;|
+			apr_pool_t           *child;|
+			apr_pool_t           *sibling;|
+			apr_pool_t          **ref;|
+			cleanup_t            *cleanups;|
+			cleanup_t            *free_cleanups;|
+			apr_allocator_t      *allocator;|
+			struct process_chain *subprocesses;|
+			apr_abortfunc_t       abort_fn;|
+			apr_hash_t           *user_data;|
+			const char           *tag;|
+			#if APR_HAS_THREADS|
+			apr_thread_mutex_t   *user_mutex;|
+			#endif |
+			#if !APR_POOL_DEBUG |
+			apr_memnode_t        *active;|
+			apr_memnode_t        *self;\n /* The node containing the pool itself */
+			char                 *self_first_avail;|
+			#else /* APR_POOL_DEBUG */ |
+			apr_pool_t           *joined;\n /* the caller has guaranteed that this pool\n
+						   * will survive as long as -\>joined */|
+			debug_node_t         *nodes;|
+			const char           *file_line;|
+			apr_uint32_t          creation_flags;|
+			unsigned int          stat_alloc;|
+			unsigned int          stat_total_alloc;|
+			unsigned int          stat_clear;|
+			#if APR_HAS_THREADS|
+			apr_os_thread_t       owner;|
+			apr_thread_mutex_t   *mutex;|
+			#endif /* APR_HAS_THREADS */|
+			#endif /* APR_POOL_DEBUG */ |
+			#ifdef NETWARE |
+			apr_os_proc_t         owner_proc;|
+			#endif /* defined(NETWARE) */
+			}"
+	]
+
+
+	sofia_dispatch_event_t:f1 ->su_msg_s [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f2 ->nua_handle_s [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f3 ->event_s [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f4 ->su_time_s [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f5 ->sip_s [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f6 ->nua_s [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f7 ->sofia_profile [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f9 ->switch_core_session [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f10 ->switch_core_session [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f11 ->apr_pool_t [arrowhead = "empty" style="dashed" color="green"]
+	sofia_dispatch_event_t:f12 ->sofia_dispatch_event_t:f0 [arrowhead = "empty" style="dashed" color="red"]
+
+	{rank=same;su_msg_s;nua_handle_s;event_s;su_time_s;sip_s;nua_s}
+	{rank=same;sofia_profile;switch_core_session}
+} 
