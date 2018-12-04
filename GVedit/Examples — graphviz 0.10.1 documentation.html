@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://graphviz.readthedocs.io/en/stable/examples.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Examples — graphviz 0.10.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="./Examples — graphviz 0.10.1 documentation_files/theme.css" type="text/css">
+  <link rel="stylesheet" href="./Examples — graphviz 0.10.1 documentation_files/pygments.css" type="text/css">
+    <link rel="index" title="Index" href="https://graphviz.readthedocs.io/en/stable/genindex.html">
+    <link rel="search" title="Search" href="https://graphviz.readthedocs.io/en/stable/search.html">
+    <link rel="next" title="API Reference" href="https://graphviz.readthedocs.io/en/stable/api.html">
+    <link rel="prev" title="User Guide" href="https://graphviz.readthedocs.io/en/stable/manual.html"> 
+
+  
+  <script async="" src="./Examples — graphviz 0.10.1 documentation_files/analytics.js.下载"></script><script src="./Examples — graphviz 0.10.1 documentation_files/modernizr.min.js.下载"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://graphviz.readthedocs.io/en/stable/examples.html">
+
+<link rel="stylesheet" href="./Examples — graphviz 0.10.1 documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/readthedocs-data.js.下载"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'examples'
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/readthedocs-analytics.js.下载"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav" style="">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="https://graphviz.readthedocs.io/en/stable/index.html" class="icon icon-home"> graphviz
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                stable
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://graphviz.readthedocs.io/en/stable/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/manual.html">User Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="https://graphviz.readthedocs.io/en/stable/examples.html#"><span class="toctree-expand"></span>Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#hello-py">hello.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#process-py">process.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#fsm-py">fsm.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#cluster-py">cluster.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#er-py">er.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#unix-py">unix.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#structs-py">structs.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#structs-revisited-py">structs_revisited.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#btree-py">btree.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#traffic-lights-py">traffic_lights.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#fdpclust-py">fdpclust.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#cluster-edge-py">cluster_edge.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#g-c-n-py">g_c_n.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/examples.html#angles-py">angles.py</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/api.html">API Reference</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://graphviz.readthedocs.io/en/stable/license.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+      <div id="rtd-fipnqyvs" class="ethical-rtd ethical-dark-theme"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://graphviz.readthedocs.io/en/stable/index.html">graphviz</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://graphviz.readthedocs.io/en/stable/index.html">Docs</a> »</li>
+        
+      <li>Examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/xflr6/graphviz/blob/1377ec44eb7431c728a21f5739297c087385b3b4/docs/examples.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="examples">
+<span id="id1"></span><h1>Examples<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#examples" title="Permalink to this headline">¶</a></h1>
+<p>The following code examples are included in the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> directory of the
+<a class="reference external" href="https://github.com/xflr6/graphviz/tree/master/examples/">source repository/distribution</a>. Most of them recreate examples from the
+<a class="reference external" href="http://www.graphviz.org/gallery/">graphviz.org gallery</a> or the <a class="reference external" href="http://www.graphviz.org/documentation/">graphviz.org documentation</a>.</p>
+<div class="section" id="hello-py">
+<h2>hello.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#hello-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># hello.py - http://www.graphviz.org/content/hello</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'hello.gv'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/hello.svg" src="./Examples — graphviz 0.10.1 documentation_files/hello.svg"></div>
+</div>
+<div class="section" id="process-py">
+<h2>process.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#process-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># process.py - http://www.graphviz.org/content/process</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Graph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'process.gv'</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'sfdp'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'run'</span><span class="p">,</span> <span class="s1">'intr'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'intr'</span><span class="p">,</span> <span class="s1">'runbl'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'runbl'</span><span class="p">,</span> <span class="s1">'run'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'run'</span><span class="p">,</span> <span class="s1">'kernel'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'kernel'</span><span class="p">,</span> <span class="s1">'zombie'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'kernel'</span><span class="p">,</span> <span class="s1">'sleep'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'kernel'</span><span class="p">,</span> <span class="s1">'runmem'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'sleep'</span><span class="p">,</span> <span class="s1">'swap'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'swap'</span><span class="p">,</span> <span class="s1">'runswap'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'runswap'</span><span class="p">,</span> <span class="s1">'new'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'runswap'</span><span class="p">,</span> <span class="s1">'runmem'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'new'</span><span class="p">,</span> <span class="s1">'runmem'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'sleep'</span><span class="p">,</span> <span class="s1">'runmem'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/process.svg" src="./Examples — graphviz 0.10.1 documentation_files/process.svg"></div>
+</div>
+<div class="section" id="fsm-py">
+<h2>fsm.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#fsm-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># fsm.py - http://www.graphviz.org/content/fsm</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'finite_state_machine'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'fsm.gv'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">rankdir</span><span class="o">=</span><span class="s1">'LR'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">'8,5'</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'doublecircle'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'LR_0'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'LR_3'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'LR_4'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'LR_8'</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_0'</span><span class="p">,</span> <span class="s1">'LR_2'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS(B)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_0'</span><span class="p">,</span> <span class="s1">'LR_1'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS(S)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_1'</span><span class="p">,</span> <span class="s1">'LR_3'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S($end)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_2'</span><span class="p">,</span> <span class="s1">'LR_6'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS(b)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_2'</span><span class="p">,</span> <span class="s1">'LR_5'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'SS(a)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_2'</span><span class="p">,</span> <span class="s1">'LR_4'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(A)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_5'</span><span class="p">,</span> <span class="s1">'LR_7'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(b)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_5'</span><span class="p">,</span> <span class="s1">'LR_5'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(a)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_6'</span><span class="p">,</span> <span class="s1">'LR_6'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(b)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_6'</span><span class="p">,</span> <span class="s1">'LR_5'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(a)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_7'</span><span class="p">,</span> <span class="s1">'LR_8'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(b)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_7'</span><span class="p">,</span> <span class="s1">'LR_5'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(a)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_8'</span><span class="p">,</span> <span class="s1">'LR_6'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(b)'</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'LR_8'</span><span class="p">,</span> <span class="s1">'LR_5'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'S(a)'</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/fsm.svg" src="./Examples — graphviz 0.10.1 documentation_files/fsm.svg"></div>
+</div>
+<div class="section" id="cluster-py">
+<span id="id5"></span><h2>cluster.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#cluster-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># cluster.py - http://www.graphviz.org/content/cluster</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'cluster.gv'</span><span class="p">)</span>
+
+<span class="c1"># NOTE: the subgraph name needs to begin with 'cluster' (all lowercase)</span>
+<span class="c1">#       so that Graphviz recognizes it as a special cluster subgraph</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster_0'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'lightgrey'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">node_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">edges</span><span class="p">([(</span><span class="s1">'a0'</span><span class="p">,</span> <span class="s1">'a1'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'a1'</span><span class="p">,</span> <span class="s1">'a2'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'a2'</span><span class="p">,</span> <span class="s1">'a3'</span><span class="p">)])</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'process #1'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster_1'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">node_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">edges</span><span class="p">([(</span><span class="s1">'b0'</span><span class="p">,</span> <span class="s1">'b1'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'b1'</span><span class="p">,</span> <span class="s1">'b2'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'b2'</span><span class="p">,</span> <span class="s1">'b3'</span><span class="p">)])</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'process #2'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'a0'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="s1">'b0'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'a1'</span><span class="p">,</span> <span class="s1">'b3'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'b2'</span><span class="p">,</span> <span class="s1">'a3'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'a3'</span><span class="p">,</span> <span class="s1">'a0'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'a3'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'b3'</span><span class="p">,</span> <span class="s1">'end'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'start'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'Mdiamond'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'Msquare'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/cluster.svg" src="./Examples — graphviz 0.10.1 documentation_files/cluster.svg"></div>
+</div>
+<div class="section" id="er-py">
+<h2>er.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#er-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># er.py - http://www.graphviz.org/content/ER</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Graph</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="s1">'ER'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'er.gv'</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'neato'</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'course'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'institute'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'student'</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'ellipse'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'name0'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'name'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'name1'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'name'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'name2'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'name'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'code'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'grade'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'number'</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'diamond'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'lightgrey'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'C-I'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'S-C'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'S-I'</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'name0'</span><span class="p">,</span> <span class="s1">'course'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'code'</span><span class="p">,</span> <span class="s1">'course'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'course'</span><span class="p">,</span> <span class="s1">'C-I'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n'</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="s1">'1.00'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'C-I'</span><span class="p">,</span> <span class="s1">'institute'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'1'</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="s1">'1.00'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'institute'</span><span class="p">,</span> <span class="s1">'name1'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'institute'</span><span class="p">,</span> <span class="s1">'S-I'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'1'</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="s1">'1.00'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'S-I'</span><span class="p">,</span> <span class="s1">'student'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n'</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="s1">'1.00'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'student'</span><span class="p">,</span> <span class="s1">'grade'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'student'</span><span class="p">,</span> <span class="s1">'name2'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'student'</span><span class="p">,</span> <span class="s1">'number'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'student'</span><span class="p">,</span> <span class="s1">'S-C'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'m'</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="s1">'1.00'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'S-C'</span><span class="p">,</span> <span class="s1">'course'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n'</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="s1">'1.00'</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'\n\nEntity Relation Diagram\ndrawn by NEATO'</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">'20'</span><span class="p">)</span>
+
+<span class="n">e</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/er.svg" src="./Examples — graphviz 0.10.1 documentation_files/er.svg"></div>
+</div>
+<div class="section" id="unix-py">
+<h2>unix.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#unix-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># unix.py - http://www.graphviz.org/content/unix</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'unix'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'unix.gv'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s1">'6,6'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">node_attr</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'lightblue2'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">)</span>
+
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'5th Edition'</span><span class="p">,</span> <span class="s1">'6th Edition'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'5th Edition'</span><span class="p">,</span> <span class="s1">'PWB 1.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'6th Edition'</span><span class="p">,</span> <span class="s1">'LSX'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'6th Edition'</span><span class="p">,</span> <span class="s1">'1 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'6th Edition'</span><span class="p">,</span> <span class="s1">'Mini Unix'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'6th Edition'</span><span class="p">,</span> <span class="s1">'Wollongong'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'6th Edition'</span><span class="p">,</span> <span class="s1">'Interdata'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Interdata'</span><span class="p">,</span> <span class="s1">'Unix/TS 3.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Interdata'</span><span class="p">,</span> <span class="s1">'PWB 2.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Interdata'</span><span class="p">,</span> <span class="s1">'7th Edition'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'7th Edition'</span><span class="p">,</span> <span class="s1">'8th Edition'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'7th Edition'</span><span class="p">,</span> <span class="s1">'32V'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'7th Edition'</span><span class="p">,</span> <span class="s1">'V7M'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'7th Edition'</span><span class="p">,</span> <span class="s1">'Ultrix-11'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'7th Edition'</span><span class="p">,</span> <span class="s1">'Xenix'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'7th Edition'</span><span class="p">,</span> <span class="s1">'UniPlus+'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'V7M'</span><span class="p">,</span> <span class="s1">'Ultrix-11'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'8th Edition'</span><span class="p">,</span> <span class="s1">'9th Edition'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'1 BSD'</span><span class="p">,</span> <span class="s1">'2 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'2 BSD'</span><span class="p">,</span> <span class="s1">'2.8 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'2.8 BSD'</span><span class="p">,</span> <span class="s1">'Ultrix-11'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'2.8 BSD'</span><span class="p">,</span> <span class="s1">'2.9 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'32V'</span><span class="p">,</span> <span class="s1">'3 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'3 BSD'</span><span class="p">,</span> <span class="s1">'4 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'4 BSD'</span><span class="p">,</span> <span class="s1">'4.1 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'4.1 BSD'</span><span class="p">,</span> <span class="s1">'4.2 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'4.1 BSD'</span><span class="p">,</span> <span class="s1">'2.8 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'4.1 BSD'</span><span class="p">,</span> <span class="s1">'8th Edition'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'4.2 BSD'</span><span class="p">,</span> <span class="s1">'4.3 BSD'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'4.2 BSD'</span><span class="p">,</span> <span class="s1">'Ultrix-32'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'PWB 1.0'</span><span class="p">,</span> <span class="s1">'PWB 1.2'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'PWB 1.0'</span><span class="p">,</span> <span class="s1">'USG 1.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'PWB 1.2'</span><span class="p">,</span> <span class="s1">'PWB 2.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'USG 1.0'</span><span class="p">,</span> <span class="s1">'CB Unix 1'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'USG 1.0'</span><span class="p">,</span> <span class="s1">'USG 2.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'CB Unix 1'</span><span class="p">,</span> <span class="s1">'CB Unix 2'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'CB Unix 2'</span><span class="p">,</span> <span class="s1">'CB Unix 3'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'CB Unix 3'</span><span class="p">,</span> <span class="s1">'Unix/TS++'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'CB Unix 3'</span><span class="p">,</span> <span class="s1">'PDP-11 Sys V'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'USG 2.0'</span><span class="p">,</span> <span class="s1">'USG 3.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'USG 3.0'</span><span class="p">,</span> <span class="s1">'Unix/TS 3.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'PWB 2.0'</span><span class="p">,</span> <span class="s1">'Unix/TS 3.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Unix/TS 1.0'</span><span class="p">,</span> <span class="s1">'Unix/TS 3.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Unix/TS 3.0'</span><span class="p">,</span> <span class="s1">'TS 4.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'Unix/TS++'</span><span class="p">,</span> <span class="s1">'TS 4.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'CB Unix 3'</span><span class="p">,</span> <span class="s1">'TS 4.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'TS 4.0'</span><span class="p">,</span> <span class="s1">'System V.0'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'System V.0'</span><span class="p">,</span> <span class="s1">'System V.2'</span><span class="p">)</span>
+<span class="n">u</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'System V.2'</span><span class="p">,</span> <span class="s1">'System V.3'</span><span class="p">)</span>
+
+<span class="n">u</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/unix.svg" src="./Examples — graphviz 0.10.1 documentation_files/unix.svg"></div>
+</div>
+<div class="section" id="structs-py">
+<h2>structs.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#structs-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># structs.py - http://www.graphviz.org/doc/info/shapes.html#html</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'structs'</span><span class="p">,</span> <span class="n">node_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'shape'</span><span class="p">:</span> <span class="s1">'plaintext'</span><span class="p">})</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'struct1'</span><span class="p">,</span> <span class="s1">'''&lt;</span>
+<span class="s1">&lt;TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"&gt;</span>
+<span class="s1">  &lt;TR&gt;</span>
+<span class="s1">    &lt;TD&gt;left&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD PORT="f1"&gt;middle&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD PORT="f2"&gt;right&lt;/TD&gt;</span>
+<span class="s1">  &lt;/TR&gt;</span>
+<span class="s1">&lt;/TABLE&gt;&gt;'''</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'struct2'</span><span class="p">,</span> <span class="s1">'''&lt;</span>
+<span class="s1">&lt;TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0"&gt;</span>
+<span class="s1">  &lt;TR&gt;</span>
+<span class="s1">    &lt;TD PORT="f0"&gt;one&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD&gt;two&lt;/TD&gt;</span>
+<span class="s1">  &lt;/TR&gt;</span>
+<span class="s1">&lt;/TABLE&gt;&gt;'''</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'struct3'</span><span class="p">,</span> <span class="s1">'''&lt;</span>
+<span class="s1">&lt;TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"&gt;</span>
+<span class="s1">  &lt;TR&gt;</span>
+<span class="s1">    &lt;TD ROWSPAN="3"&gt;hello&lt;BR/&gt;world&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD COLSPAN="3"&gt;b&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD ROWSPAN="3"&gt;g&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD ROWSPAN="3"&gt;h&lt;/TD&gt;</span>
+<span class="s1">  &lt;/TR&gt;</span>
+<span class="s1">  &lt;TR&gt;</span>
+<span class="s1">    &lt;TD&gt;c&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD PORT="here"&gt;d&lt;/TD&gt;</span>
+<span class="s1">    &lt;TD&gt;e&lt;/TD&gt;</span>
+<span class="s1">  &lt;/TR&gt;</span>
+<span class="s1">  &lt;TR&gt;</span>
+<span class="s1">    &lt;TD COLSPAN="3"&gt;f&lt;/TD&gt;</span>
+<span class="s1">  &lt;/TR&gt;</span>
+<span class="s1">&lt;/TABLE&gt;&gt;'''</span><span class="p">)</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">edges</span><span class="p">([(</span><span class="s1">'struct1:f1'</span><span class="p">,</span> <span class="s1">'struct2:f0'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'struct1:f2'</span><span class="p">,</span> <span class="s1">'struct3:here'</span><span class="p">)])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/structs.svg" src="./Examples — graphviz 0.10.1 documentation_files/structs.svg"></div>
+</div>
+<div class="section" id="structs-revisited-py">
+<h2>structs_revisited.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#structs-revisited-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># structs_revisited.py - http://www.graphviz.org/pdf/dotguide.pdf Figure 12</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'structs'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'structs_revisited.gv'</span><span class="p">,</span> <span class="n">node_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'shape'</span><span class="p">:</span> <span class="s1">'record'</span><span class="p">})</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'struct1'</span><span class="p">,</span> <span class="s1">'&lt;f0&gt; left|&lt;f1&gt; middle|&lt;f2&gt; right'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'struct2'</span><span class="p">,</span> <span class="s1">'&lt;f0&gt; one|&lt;f1&gt; two'</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'struct3'</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'hello\nworld |{ b |{c|&lt;here&gt; d|e}| f}| g | h'</span><span class="p">)</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">edges</span><span class="p">([(</span><span class="s1">'struct1:f1'</span><span class="p">,</span> <span class="s1">'struct2:f0'</span><span class="p">),</span> <span class="p">(</span><span class="s1">'struct1:f2'</span><span class="p">,</span> <span class="s1">'struct3:here'</span><span class="p">)])</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/structs_revisited.svg" src="./Examples — graphviz 0.10.1 documentation_files/structs_revisited.svg"></div>
+</div>
+<div class="section" id="btree-py">
+<h2>btree.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#btree-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># btree.py - http://www.graphviz.org/pdf/dotguide.pdf Figure 13</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span><span class="p">,</span> <span class="n">nohtml</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'g'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'btree.gv'</span><span class="p">,</span> <span class="n">node_attr</span><span class="o">=</span><span class="p">{</span><span class="s1">'shape'</span><span class="p">:</span> <span class="s1">'record'</span><span class="p">,</span> <span class="s1">'height'</span><span class="p">:</span> <span class="s1">'.1'</span><span class="p">})</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node0'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; G|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node1'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; E|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node2'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; B|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node3'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; F|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node4'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; R|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node5'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; H|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node6'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; Y|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node7'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; A|&lt;f2&gt;'</span><span class="p">))</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'node8'</span><span class="p">,</span> <span class="n">nohtml</span><span class="p">(</span><span class="s1">'&lt;f0&gt; |&lt;f1&gt; C|&lt;f2&gt;'</span><span class="p">))</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node0:f2'</span><span class="p">,</span> <span class="s1">'node4:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node0:f0'</span><span class="p">,</span> <span class="s1">'node1:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node1:f0'</span><span class="p">,</span> <span class="s1">'node2:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node1:f2'</span><span class="p">,</span> <span class="s1">'node3:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node2:f2'</span><span class="p">,</span> <span class="s1">'node8:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node2:f0'</span><span class="p">,</span> <span class="s1">'node7:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node4:f2'</span><span class="p">,</span> <span class="s1">'node6:f1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'node4:f0'</span><span class="p">,</span> <span class="s1">'node5:f1'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/btree.svg" src="./Examples — graphviz 0.10.1 documentation_files/btree.svg"></div>
+</div>
+<div class="section" id="traffic-lights-py">
+<h2>traffic_lights.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#traffic-lights-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># traffic_lights.py - http://www.graphviz.org/content/traffic_lights</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'TrafficLights'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'traffic_lights.gv'</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'neato'</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'box'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'gy</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'yr</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'rg</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">fixedsize</span><span class="o">=</span><span class="s1">'true'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">'0.9'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'green</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'yellow</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'red</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'safe</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]:</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'gy</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'yellow</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'rg</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'green</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'yr</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'safe</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">j</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'yr</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'red</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'safe</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'rg</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'green</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'gy</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'yellow</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'yr</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'red</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'rg</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">overlap</span><span class="o">=</span><span class="s1">'false'</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'PetriNet Model TrafficLights\n'</span>
+             <span class="sa">r</span><span class="s1">'Extracted from ConceptBase and layed out by Graphviz'</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">'12'</span><span class="p">)</span>
+
+<span class="n">t</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/traffic_lights.svg" src="./Examples — graphviz 0.10.1 documentation_files/traffic_lights.svg"></div>
+</div>
+<div class="section" id="fdpclust-py">
+<h2>fdpclust.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#fdpclust-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># fdpclust.py - http://www.graphviz.org/content/fdpclust</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Graph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'fdpclust.gv'</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">'fdp'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'e'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'clusterA'</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">a</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'clusterC'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'clusterB'</span><span class="p">)</span> <span class="k">as</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'e'</span><span class="p">,</span> <span class="s1">'clusterB'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'clusterC'</span><span class="p">,</span> <span class="s1">'clusterB'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/fdpclust.svg" src="./Examples — graphviz 0.10.1 documentation_files/fdpclust.svg"></div>
+</div>
+<div class="section" id="cluster-edge-py">
+<h2>cluster_edge.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#cluster-edge-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># cluster_edge.py - http://www.graphviz.org/pdf/dotguide.pdf Figure 20</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'cluster_edge.gv'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">compound</span><span class="o">=</span><span class="s1">'true'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster0'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="s1">'ab'</span><span class="p">,</span> <span class="s1">'ac'</span><span class="p">,</span> <span class="s1">'bd'</span><span class="p">,</span> <span class="s1">'cd'</span><span class="p">])</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster1'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">edges</span><span class="p">([</span><span class="s1">'eg'</span><span class="p">,</span> <span class="s1">'ef'</span><span class="p">])</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">,</span> <span class="n">lhead</span><span class="o">=</span><span class="s1">'cluster1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">,</span> <span class="n">ltail</span><span class="o">=</span><span class="s1">'cluster0'</span><span class="p">,</span> <span class="n">lhead</span><span class="o">=</span><span class="s1">'cluster1'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="n">ltail</span><span class="o">=</span><span class="s1">'cluster0'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'h'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/cluster_edge.svg" src="./Examples — graphviz 0.10.1 documentation_files/cluster_edge.svg"></div>
+</div>
+<div class="section" id="g-c-n-py">
+<h2>g_c_n.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#g-c-n-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># http://www.graphviz.org/Gallery/gradient/g_c_n.html</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Graph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'g_c_n.gv'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="s1">'purple:pink'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'agraph'</span><span class="p">,</span> <span class="n">fontcolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster1'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">fillcolor</span><span class="o">=</span><span class="s1">'blue:cyan'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'acluster'</span><span class="p">,</span> <span class="n">fontcolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span>
+           <span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">,</span> <span class="n">gradientangle</span><span class="o">=</span><span class="s1">'270'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'box'</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s1">'red:yellow'</span><span class="p">,</span>
+           <span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">,</span> <span class="n">gradientangle</span><span class="o">=</span><span class="s1">'90'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'anode'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/g_c_n.svg" src="./Examples — graphviz 0.10.1 documentation_files/g_c_n.svg"></div>
+</div>
+<div class="section" id="angles-py">
+<h2>angles.py<a class="headerlink" href="https://graphviz.readthedocs.io/en/stable/examples.html#angles-py" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># angles.py - http://www.graphviz.org/Gallery/gradient/angles.html</span>
+
+<span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Digraph</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">(</span><span class="s1">'G'</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">'angles.gv'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">bgcolor</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster_1'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">fontcolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">'filled'</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s1">'white:black'</span><span class="p">,</span>
+           <span class="n">gradientangle</span><span class="o">=</span><span class="s1">'360'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n9:360'</span><span class="p">,</span> <span class="n">fontcolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'n9'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">360</span> <span class="o">-</span> <span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">)):</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">gradientangle</span><span class="o">=</span><span class="s1">'</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n</span><span class="si">%d</span><span class="s1">:</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'n</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'Linear Angle Variations (white to black gradient)'</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">g</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'cluster_2'</span><span class="p">)</span> <span class="k">as</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">fontcolor</span><span class="o">=</span><span class="s1">'white'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">'circle'</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">'radial'</span><span class="p">,</span> <span class="n">fillcolor</span><span class="o">=</span><span class="s1">'white:black'</span><span class="p">,</span>
+           <span class="n">gradientangle</span><span class="o">=</span><span class="s1">'360'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n18:360'</span><span class="p">,</span> <span class="n">fontcolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'n18'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">360</span> <span class="o">-</span> <span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">)):</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="n">gradientangle</span><span class="o">=</span><span class="s1">'</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'n</span><span class="si">%d</span><span class="s1">:</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s1">'n</span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">attr</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">'Radial Angle Variations (white to black gradient)'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s1">'n5'</span><span class="p">,</span> <span class="s1">'n14'</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/angles.svg" src="./Examples — graphviz 0.10.1 documentation_files/angles.svg"></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://graphviz.readthedocs.io/en/stable/api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://graphviz.readthedocs.io/en/stable/manual.html" class="btn btn-neutral" title="User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-mvecm6qb" class="ethical-rtd"></div></div>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2013-2018, Sebastian Bank
+      
+        <span class="commit">
+          Revision <code>1377ec44</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: stable
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+        
+        <dd><a href="https://graphviz.readthedocs.io/en/latest/examples.html">latest</a></dd>
+        
+        
+         <strong> 
+        <dd><a href="https://graphviz.readthedocs.io/en/stable/examples.html">stable</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="https://readthedocs.org/projects/graphviz/downloads/htmlzip/stable/">HTML</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/graphviz/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/graphviz/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/graphviz/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/xflr6/graphviz/blob/1377ec44eb7431c728a21f5739297c087385b3b4/docs/examples.rst">View</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/graphviz/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  
+
+    
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.10.1',
+              LANGUAGE:'en',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/jquery-2.0.3.min.js.下载"></script>
+        <script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/jquery-migrate-1.2.1.min.js.下载"></script>
+        <script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/underscore.js.下载"></script>
+        <script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/doctools.js.下载"></script>
+        <script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/readthedocs-doc-embed.js.下载"></script>
+    
+
+  
+
+  <script type="text/javascript" src="./Examples — graphviz 0.10.1 documentation_files/theme.js.下载"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>
